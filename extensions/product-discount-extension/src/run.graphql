@@ -1,16 +1,8 @@
 query RunInput {
   cart {
     lines {
-      quantity
-      id
-      merchandise {
-        ... on ProductVariant {
-          product {  
-          metafield(key: "productDiscount",namespace: "custom"){
-            value
-          }
-          }
-        }
+      attribute(key: "discount"){
+        value
       }
     }
   }
