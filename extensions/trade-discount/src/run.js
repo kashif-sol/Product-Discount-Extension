@@ -19,7 +19,7 @@ export function run(input) {
 
   const discounts = input.cart.lines.map(line => ({
     targets: [{ cartLine: { id: line.id } }],
-    value: { percentage: { value: line.attribute?.value } },
+    value: { percentage: { value: parseInt(line.attribute?.value ?? '0', 10) } },
   }));
 
   return {
